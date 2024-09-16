@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import CustomerListItem from "../components/CustomerListItem";
 import Navbar from "../components/Navbar";
+import { Link } from 'react-router-dom'
 
 function CustomerList() {
     const [customers, setCustomers] = useState([]);
@@ -23,9 +23,11 @@ return (
     <h1>Customers List</h1>
     <ul>
         {customers.map(customer => (
-         <CustomerListItem key={customer.id} customer={customer} />
+          <li key={customer.id}>
+            <Link to={`/customers/${customer.id}`}>{customer.name}</Link> - {customer.phone_number}
+          </li>
         ))}
-    </ul>
+      </ul>
   </div>
 );
 }

@@ -7,14 +7,16 @@ import CustomerDetail from './pages/CustomerDetail';
 
 
 
+
 function App() {
   return(
     <Router>
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route exact path="/customers" element={<CustomerList />} />
-        <Route exact path='/customers/new' element={<CustomerForm />} />
-        <Route path='/customers/:id' element={<CustomerDetail />} />
+        <Route path="/customers/new" element={<CustomerForm />} />
+        <Route path="/customers/:id" element={<CustomerDetail />} />
+        <Route path="/customers/:id/edit" element={<CustomerForm />} />
       </Routes>
     </Router>
   );
